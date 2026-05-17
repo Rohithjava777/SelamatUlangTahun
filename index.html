@@ -11,6 +11,7 @@
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" type="image/x-icon" href="./img/hbd.png">
   <title>Happy Birthday!</title>
@@ -25,69 +26,133 @@
     <div class="container" id="timer">
       <h5>Countdown to <x id='name'></x> birthday :</h5>
       <ul>
-        <li><span id="days"></span>days</li>
+        <li><span id="days"></span>Days</li>
         <li><span id="hours"></span>Hours</li>
         <li><span id="minutes"></span>Minutes</li>
         <li><span id="seconds"></span>Seconds</li>
       </ul>
     </div>
 
-    <div id="slideSatu" class="animate__animated animate__slideInDown animate__slow d-none">
+    <div id="slideOne" class="animate__animated animate__slideInDown animate__slow d-none">
       <img src="./img/hbd1.png" class="img">
     </div>
 
-    <div id="slideDua"
+    <div id="slideTwo"
       class="slides d-none paper animate__zoomInDown animate__animated animate__delay-2s animate__slow">
       <div class="paper-content">
-        <p id="teks1" class="teks"></p>
+        <p id="text1" class="text"></p>
       </div>
     </div>
 
-    <div id="slideTiga" class="slides d-none paper animate__fadeInRight animate__animated">
+    <div id="slideLuck" class="slides d-none box animate__animated animate__fadeIn">
+      <div class="row">
+        <div class="col-sm px-4">
+          <h5 class="mb-4">chalant Dharani</h5>
+          <div class="progress" style="height: 30px; border-radius: 15px;">
+            <div id="luckBar" class="progress-bar bg-info" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="slidePookie" class="slides d-none paper animate__animated animate__fadeIn">
       <div class="paper-content">
-        <p id="teks2" class="teks"></p>
+        <div class="p-5 text-center">
+          <h1 style="font-family: 'Pacifico', cursive; color: #ff7eb3; font-size: 3rem; margin-bottom: 20px;">happy birthday pookie</h1>
+          <h5 class="text-muted mb-4" style="font-style: italic;">things you are best andd should be happy for:</h5>
+          <div style="font-size: 2rem; font-family: 'Handlee', cursive; color: #333; line-height: 1.8; text-align: left; display: inline-block;">
+            1. your are diva <br> 
+            2. your are baddie <br> 
+            3. you are cute
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="kotak d-none slides animate__animated animate__fadeInDown animate__delay-2s" id="slideEmpat">
+    <div id="slideQuestion" class="box d-none slides animate__animated animate__fadeIn">
+      <div class="row">
+        <div class="col-12 px-4 py-3">
+          <h5 class="mb-4 theme-text" style="font-size: 1.8rem;">Are you Dharani? If yes, answer this:</h5>
+          <div class="d-flex flex-column" style="gap: 15px; width: 85%; margin: 0 auto;">
+            <button class="btn btn-theme q-option text-left" data-correct="true">1. Dharani can't remember dates</button>
+            <button class="btn btn-theme q-option text-left" data-correct="false">2. Dharani can remember dates</button>
+            <button class="btn btn-theme q-option text-left" data-correct="false">3. Dharani can't cook</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="slidePhotos" class="box d-none slides animate__animated animate__zoomIn" style="max-width: 800px; max-height: unset; min-height: 450px; top: 30px;">
+      <div class="row">
+        <div class="col-12 px-4 py-4 text-center">
+          <h5 class="mb-4 theme-text" style="font-size: 2rem;">Beautiful Memories</h5>
+          <div class="d-flex justify-content-center" style="margin-bottom: 30px;">
+            <div style="width: 300px; height: 300px; max-width: 90%; background-color: transparent; border-radius: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 4px 15px rgba(255, 126, 179, 0.4);">
+              <img src="./img/dharani.jpg" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          </div>
+          <div>
+            <p id="photoMessage" style="font-family: 'Quicksand', sans-serif; font-size: 1.2rem; color: #555; line-height: 1.5; padding: 0 10px; font-style: italic;">
+              For birthdays are a link<br>Between the future and the past<br>Reminding us to treasure most<br>Special joys that last happy birthday pookkie
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="box d-none slides animate__animated animate__fadeInDown animate__delay-2s" id="slideFour">
       <div class="row">
         <div class="col-sm mt-1">
-          <h5>Kamu suka nggak?</h5>
+          <h5>Do you like it?</h5>
         </div>
       </div>
       <div class="row mt-2">
         <div class="col-4 offset-2">
-          <button id="gak" class="btn btn-outline-danger"> Gak! </button>
+          <button id="no" class="btn btn-outline-danger"> No! </button>
         </div>
         <div class="col-4">
-          <button id="suka" class="btn btn-outline-info"> Suka!! </button>
+          <button id="yes" class="btn btn-outline-info"> Yes!! </button>
         </div>
       </div>
     </div>
 
-    <div id="slideLima" class="d-none animate__bounceIn animate__animated animate__slow">
-      <i class="fas fa-heart fa-5x text-danger"></i>
+    <div id="slideNo" class="box d-none slides animate__animated animate__fadeIn">
+      <div class="row">
+        <div class="col-12 px-4 py-4 text-center">
+          <h5 class="theme-text" style="font-size: 2.5rem; line-height: 1.5; font-family: 'Pacifico', cursive; margin-bottom: 30px;">i know you like it ahhh you should</h5>
+          <button id="finalYes" class="btn btn-theme" style="font-size: 1.5rem; padding: 10px 40px; border-radius: 30px;"> Yes!! </button>
+        </div>
+      </div>
     </div>
-    <p id="trims" class="text-muted d-none mt-2"></p>
 
-    <p id="tap" class="d-none animate__animated animate__pulse text-muted animate__slow animate__repeat-3">Ketuk untuk
-      melanjutkan</p>
+    <div id="slideYes" class="box d-none slides animate__animated animate__fadeIn">
+      <div class="row">
+        <div class="col-12 px-4 py-4 text-center">
+          <h5 class="theme-text" style="font-size: 2.5rem; line-height: 1.5; font-family: 'Pacifico', cursive;">ayayayayayaya happy birthdayyyyyyyyyyy <br>❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️</h5>
+          <p class="text-muted mt-4" style="font-size: 1rem; font-style: italic;">rohith ehhh</p>
+        </div>
+      </div>
+    </div>
+
+    <p id="tap" class="d-none animate__animated animate__pulse text-muted animate__slow animate__repeat-3">Tap to continue</p>
     <!-- Footer -->
     <footer class="page-footer font-small blue fixed-bottom">
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-  </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
-  <script src="https://kit.fontawesome.com/61e5120832.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
-  <script src="https://momentjs.com/downloads/moment.js"></script>
-  <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
-  <script src="https://momentjs.com/downloads/moment-timezone-with-data.js"></script>
-  <script src="script.js"></script>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+        </script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
+      <script src="https://kit.fontawesome.com/61e5120832.js" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+      <script src="https://momentjs.com/downloads/moment.js"></script>
+      <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+      <script src="https://momentjs.com/downloads/moment-timezone-with-data.js"></script>
+      <script src="script.js"></script>
+    </footer>
+  </div>
 </body>
 
 </html>
